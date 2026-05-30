@@ -1,17 +1,17 @@
 function isValidJsBasicsIdentifier(value) {
-   // Must be a string
+  
   if (typeof value !== "string") {
     return false;
   }
 
   const trimmed = value.trim();
 
-  // Must not be empty after trimming
+ 
   if (trimmed.length === 0) {
     return false;
   }
 
-  // Reserved words
+  
   const reservedWords = new Set([
     "let",
     "const",
@@ -25,9 +25,7 @@ function isValidJsBasicsIdentifier(value) {
     return false;
   }
 
-  // Identifier rules:
-  // - Starts with letter, underscore, or $
-  // - Remaining chars may include letters, digits, _, $
+ 
   const identifierPattern = /^[A-Za-z_$][A-Za-z0-9_$]*$/;
 
   return identifierPattern.test(trimmed);
